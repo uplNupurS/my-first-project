@@ -1,0 +1,76 @@
+<div class="flex flex-col justify-center items-center bg-gradient-to-r from-black via-stone-700 to-black h-screen ">
+    <div>
+        <div>
+            <p class="text-3xl text-white font-normal ">Login</p>
+        </div>
+        <form>
+            <div class="m-4">
+                <input type="email" formControlName="email" id="email" placeholder="Enter your email"
+                    class="p-2 rounded-sm w-[20em]" #email (keyup)="emailinput(email.value)">
+                   
+            </div>
+            <div class="m-4">
+                <input type="password" formControlName="password" id="password" placeholder="Enter your password"
+                    class="p-2 rounded-sm w-[20em]" #password (keyup)="passwordfield(password.value)">
+            </div>
+            <div>
+                <!-- <button type="submit" (click)="login()" class="w-[20em] p-2 rounded-3xl bg-white text-black m-4">Log
+                    In</button> -->
+                    <button type="submit" (click)="login()" class="w-[20em] p-2 rounded-3xl bg-white text-black m-4">Log in</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <hr>
+       {{email.value}}
+      </div>
+</div>
+<!-- 
+<div class="flex flex-col justify-center items-center bg-gradient-to-r from-black via-stone-700 to-black h-screen text-center">
+    <h4 class="text-center"> Login </h4>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate class="d-flex-center">
+      <div class="example-container">
+        <div>
+          <mat-form-field>
+            <input  type="email" formControlName="email" id="email" placeholder="Enter your email" class="p-2 rounded-sm w-[20em]">
+            <mat-error *ngIf="!loginForm.get('email')?.errors?.required && (loginForm.get('email')?.errors?.pattern)">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) && loginForm.get('email')?.errors?.required">
+              Email is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mt-top-2">
+          <mat-form-field>
+            <input type="password" name="password" id="password" placeholder="Enter your password" class="p-2 rounded-sm w-[20em]">
+            <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+              Password length must be greater than or equal to 8 and password must contain one or more uppercase , lowercase , numeric and special characters
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) && loginForm.get('password')?.errors?.required">
+              Password is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mt-top">
+          <button [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button>Sign In</button>
+        </div>
+      </div>
+    </form>
+  </div> -->
+
+  <!-- <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">email</div>
+      <div class="col-xs-9">{{ model.email }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">password</div>
+      <div class="col-xs-9">{{ model.password }}</div>
+    </div>
+    
+    <br>
+    <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button> 
+
+  </div> -->
